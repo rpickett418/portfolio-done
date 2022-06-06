@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/styles.css">
     <title>Rahsaan's Portfolio</title>
@@ -93,7 +94,18 @@
       <section id="section-4">
         <div class="contact-container">
           <div class="form-container">
-            <form onsubmit="sendEmail(); reset(); return false;" >
+
+            <h1 class="contact-header"> Contact Me </h1>
+             <br />
+            <h2 class="contact-header-second"> rpickettdev247@gmail.com</h2>
+            <br />
+            <div class="icons">
+             <a id="icon-link" href="https://www.linkedin.com/in/rahsaanpickett/" target="_blank"> <i class="fa-brands fa-linkedin"></i></a>
+             <a id="icon-link" href="https://github.com/rpickett418" target="_blank"><i class="fa-brands fa-github"></i></a>
+             <a id="icon-link" href="" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            
+            <!-- <form onsubmit="sendEmail(); reset(); return false;" >
       
               <p>
                 <label>Name:<br />
@@ -109,14 +121,14 @@
                 </p>           
                 <br />             
                     <button type="submit">Submit</button> 
-            </form>
+            </form> -->
           </div>
         </div>
       </section>
       </div>
       <script src="./js/main.js"></script>
       <script src="https://smtpjs.com/v3/smtp.js"></script>
-      <script>
+      <!-- <script>
         function sendEmail(){
           Email.send({
             Host : "smtp.gmail.com",
@@ -133,6 +145,6 @@
           message => alert(message)
         );
         }
-      </script>
+      </script> -->
 </body>
 </html>  
