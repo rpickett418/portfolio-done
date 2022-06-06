@@ -71,7 +71,7 @@
                 Hyphy Sports Merch
                 </h1>
                 <a href="#">                
-                  <img class="proj-img" src="../../images/Jerseys .jpg" alt="proj-img">
+                  <img class="proj-img" src="../../public/images/Jerseys .jpg" alt="proj-img">
                 </a>
               </div>
             
@@ -81,7 +81,7 @@
                 HVAC
                 </h1>
                 <a href="#">
-                  <img class="proj-img" src="../../images/HVAC.jpg" alt="proj-img">
+                  <img class="proj-img" src="../../public/images/HVAC.jpg" alt="proj-img">
                 </a>
               </div>
               
@@ -93,33 +93,46 @@
       <section id="section-4">
         <div class="contact-container">
           <div class="form-container">
-            <form action="/contact" method="post">
+            <form onsubmit="sendEmail(); reset(); return false;" >
+      
               <p>
-                <label>Company Name</label><br />
-                <input type="text" name="company_name" required >
+                <label>Name:<br />
+                <input type="text" id="your_name"name="name" placeholder="Your Name"required>
               </p>
               <p>
-                <label>First Name</label><br />
-                <input type="text" name="company_name" required>
-              </p>
-              <p>
-                <label>Last Name</label><br />
-                <input type="text" name="company_name" required>
-              </p>
-              <p>
-                <label>Email</label><br />  
-                <input type="email" placeholder="Email@email.com" name="email">
+                <label>Email:</label><br />  
+                <input type="email" id="email" placeholder="Email@email.com" name="email">
               </p>
                 <p>
-                  <label>Remarks</label><br />
-                  <input textarea="message" name="message" rows="6" cols="10">
-                </p>                        
-                    <button class="submit">Submit</button> 
+                  <label>Message</label><br />
+                  <textarea id="message" placeholder="How can I help you?"  name="message" rows="6" cols="20"></textarea>
+                </p>           
+                <br />             
+                    <button type="submit">Submit</button> 
             </form>
           </div>
         </div>
       </section>
       </div>
       <script src="./js/main.js"></script>
+      <script src="https://smtpjs.com/v3/smtp.js"></script>
+      <script>
+        function sendEmail(){
+          Email.send({
+            Host : "smtp.gmail.com",
+            Username : "rpickettdev247@gmil.com",
+            Password : "Kob3240101@1",
+            To : 'rpickettdev247@gmil.com',
+            From : document.getElementById("email").value,
+            Subject : "New Contact From Enquiry",
+            Body : "first_name: " + document.getElementById("your_name").value 
+            + "<br> Email: " + document.getElementById("email").value
+            + "<br> Message: " + document.getElementById("message").value
+      
+        }).then(
+          message => alert(message)
+        );
+        }
+      </script>
 </body>
 </html>  
